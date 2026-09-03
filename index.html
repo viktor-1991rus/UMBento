@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <link rel="icon" href="/assets/logo/bull.svg" />
+    <link rel="preload" href="/fonts/Manrope-Variable.woff2" as="font" type="font/woff2" crossorigin />
+    <title>Uminers — AI compute, GPU servers and mining hardware</title>
+    <meta name="description" content="AI systems, GPU servers, accelerators, ASIC miners, containers and power gear — sourced, configured and delivered by the Uminers desk." />
+    <!-- PRE-BOOT. Inline on purpose: on a slow line the module graph can take
+         seconds to arrive and until then #app is empty. This is the only thing
+         between the visitor and a blank page, so it cannot depend on a
+         stylesheet or on JS. The two hex values are the literal --canvas and
+         --paper-line from system.css; they are the one place in the project
+         where hardcoding is correct, because system.css has not loaded yet.
+         BootSequence.vue removes this node on its first frame. -->
+    <style>
+      html{ background:#EAE8E1; }
+      #um-preboot{ position:fixed; inset:0; z-index:8999; background:#EAE8E1;
+        display:grid; place-items:center; }
+      #um-preboot i{ display:block; width:132px; height:100.27px; background:#CBC6BA;
+        -webkit-mask:url("/assets/logo/bull-mark.svg") center/100% 100% no-repeat;
+                mask:url("/assets/logo/bull-mark.svg") center/100% 100% no-repeat;
+        animation:um-pre 1400ms cubic-bezier(.4,0,.6,1) infinite; }
+      @keyframes um-pre{ 0%,100%{ opacity:.32 } 50%{ opacity:.86 } }
+      @media (prefers-reduced-motion: reduce){ #um-preboot i{ animation:none; opacity:.6 } }
+    </style>
+    <noscript><style>#um-preboot{ display:none }</style></noscript>
+  </head>
+  <body>
+    <div id="um-preboot"><i></i></div>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
